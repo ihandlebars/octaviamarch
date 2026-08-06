@@ -1,0 +1,12 @@
+{
+  "name": "octavia-march-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Octavia March — personal brand website",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
