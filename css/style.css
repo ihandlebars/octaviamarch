@@ -885,8 +885,25 @@ section[id] { scroll-margin-top: 88px; }
   .stat { border-right: none; border-bottom: 1px solid rgba(243,239,232,0.15); padding: 16px 0; }
   .stat:last-child { border-bottom: none; }
   .about-inner { padding: 120px var(--edge) 70px; }
+  /* object-position/scale above were tuned for wide landscape viewports —
+     object-fit:cover crops very differently on a narrow, tall phone screen,
+     so both need their own values here rather than inheriting the desktop ones. */
+  .hero-img { object-position: 72% 15%; transform: scale(1); }
+  .about-bg-scrim {
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.72) 45%, var(--black) 100%),
+      linear-gradient(90deg, var(--black) 0%, rgba(10,10,10,0.75) 55%, rgba(10,10,10,0.55) 100%);
+  }
   .press-row { gap: 28px 20px; }
   .watch-overlay { top: 100px; left: var(--edge); right: var(--edge); max-width: none; }
+  /* Desktop's diagonal scrim only darkens the top-left corner, sized around a
+     460px-wide text block. On mobile the overlay spans the full width instead,
+     so the back half of each line loses contrast — needs full-width darkening. */
+  .watch-scrim {
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.88) 0%, rgba(10,10,10,0.7) 40%, rgba(10,10,10,0.25) 65%, transparent 82%),
+      linear-gradient(0deg, rgba(10,10,10,0.5) 0%, transparent 25%);
+  }
   .mib-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
