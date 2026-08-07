@@ -39,9 +39,10 @@
       <a href="#press">Credits</a>
       <a href="#watch">Watch</a>
       <a href="#mib">Music IV Breakfast</a>
+      <a href="#work">Work With Me</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="nav-cta">Book Now</a>
+    <a href="#work" class="nav-cta">Book Now</a>
     <button class="nav-burger" id="navBurger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -51,6 +52,7 @@
     <a href="#press">Credits</a>
     <a href="#watch">Watch</a>
     <a href="#mib">Music IV Breakfast</a>
+    <a href="#work">Work With Me</a>
     <a href="#contact">Contact</a>
   </div>
 </header>
@@ -136,7 +138,7 @@
 
       <p id="bioPreview">A graduate of The American InterContinental University with a BFA in Media Production, Octavia founded <strong>iHandlebars Production</strong> in 2009 and has since built a career spanning V103, Sony Music, Revolt TV, and more.</p>
 
-      <button class="read-more-btn" id="readMoreBtn">Read Full Bio <span class="arrow">→</span></button>
+      <button class="read-more-btn" data-modal-target="bioModal">Read Full Bio <span class="arrow">→</span></button>
 
       <div class="about-quote">
         <span class="quote-mark">“</span>
@@ -253,7 +255,7 @@
     <div class="mib-video reveal">
       <div class="mib-video-frame">
         <iframe
-          src="https://www.youtube.com/embed/wvRkd0CwsFQ"
+          src="https://www.youtube.com/embed/kpMOAqvlUlw?start=766"
           title="Music IV Breakfast — Latest Episode"
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -264,14 +266,162 @@
   </div>
 </section>
 
+<!-- ============ WORK WITH ME ============ -->
+<section class="work" id="work">
+  <div class="work-inner">
+    <p class="eyebrow reveal">05 — Work With Me</p>
+    <h2 class="work-title reveal">Start The <span class="chrome-text">Project</span>.</h2>
+    <p class="work-sub reveal">New clients and new work always welcome — here's what it costs, how fast it moves, and where to send your files.</p>
+
+    <div class="work-grid reveal">
+      <div class="work-card">
+        <span class="work-card-label">Rate Card</span>
+        <h3>Video, audio, radio, creative direction &amp; design</h3>
+        <p>Transparent pricing across every service offered — from short-form edits to full podcast production.</p>
+        <button class="read-more-btn" data-modal-target="ratesModal">View Full Rate Card <span class="arrow">→</span></button>
+      </div>
+
+      <div class="work-card work-card--turnaround">
+        <span class="work-card-label">Response Time</span>
+        <div class="turnaround-stats">
+          <div class="turnaround-stat">
+            <span class="chrome-text">24<small>hr</small></span>
+            <small>Response Time</small>
+          </div>
+          <div class="turnaround-stat">
+            <span class="chrome-text">48<small>hr</small></span>
+            <small>Typical Turnaround</small>
+          </div>
+        </div>
+        <p>Every inquiry gets a response within 24 hours. Most projects are completed within 48 hours of receiving your files and brief, depending on scope.</p>
+      </div>
+
+      <div class="work-card">
+        <span class="work-card-label">Step 1 — Drop Off</span>
+        <h3>Send your files</h3>
+        <p>Audio, video, voice notes — drop your raw files into the intake folder, then describe the project using the contact form below.</p>
+        <a href="https://drive.google.com/drive/folders/1Y_Xofc0JSxfGDGj1LRjcXaAz0toVX835?usp=sharing" target="_blank" rel="noopener" class="read-more-btn">Drop Off Files <span class="arrow">↗</span></a>
+        <p class="work-note">Requires signing into any Google account to upload. Trouble with that? Email your files directly instead.</p>
+      </div>
+
+      <div class="work-card">
+        <span class="work-card-label">Step 2 — Pickup</span>
+        <h3>Get your finished project</h3>
+        <p>Once your project is complete, you'll receive a private download link by email — no public delivery page, so your work stays yours alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RATES MODAL ============ -->
+<div class="modal" id="ratesModal">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-panel modal-panel--wide">
+    <button class="modal-close" data-close aria-label="Close"><svg class="icon"><use href="#i-close"/></svg></button>
+    <p class="eyebrow">Rate Card</p>
+    <h3>Video · Audio · Radio · Creative Direction · Design</h3>
+    <p class="rates-effective">Effective August 2026. Custom quotes available for bulk, retainer, or multi-service packages.</p>
+
+    <div class="rate-group">
+      <h4>Video Editing</h4>
+
+      <div class="rate-sub">Short-Form Edits <span>(Reels, TikTok, YouTube Shorts)</span></div>
+      <div class="rate-row"><span>Basic 30-Second Edit</span><strong>$100</strong></div>
+      <ul class="rate-includes">
+        <li>Trimming and arranging footage</li>
+        <li>Music placement (client-provided or royalty-free)</li>
+        <li>Basic color correction &amp; audio leveling</li>
+        <li>One round of revisions · Delivered in HD (1080p)</li>
+      </ul>
+      <div class="rate-row rate-row--add"><span>Rush Delivery (24 hours)</span><strong>+$50</strong></div>
+      <div class="rate-row rate-row--add"><span>Additional Revision</span><strong>+$25</strong></div>
+      <div class="rate-row rate-row--add"><span>Captions/Subtitles Only</span><strong>+$50</strong></div>
+      <p class="rate-fine">Bundle rate: 5+ shorts from the same source footage, $85 each.</p>
+
+      <div class="rate-sub">Podcast Video Editing</div>
+      <div class="rate-row"><span>Full Edit — video + audio (up to 60 min raw)</span><strong>$500</strong></div>
+      <div class="rate-row"><span>Video-Only Edit — client supplies mixed/mastered audio</span><strong>$250</strong></div>
+      <div class="rate-row rate-row--add"><span>Each additional 15 minutes of raw footage</span><strong>+$40</strong></div>
+      <ul class="rate-includes">
+        <li>Multi-camera sync and switching · Pacing edit and filler-word removal</li>
+        <li>Color correction · Intro/outro and lower thirds</li>
+        <li>Burned-in or SRT captions · One round of revisions</li>
+      </ul>
+      <p class="rate-fine">Full Edit includes complete audio post (noise reduction, leveling, EQ, mastering, music beds) on top of the video work. Video-Only applies when a pre-mixed, broadcast-ready audio file is provided.</p>
+
+      <div class="rate-sub">Podcast Shoot + Produce Package</div>
+      <div class="rate-row"><span>On-location recording + full episode edit (flat rate)</span><strong>$1,100</strong></div>
+      <ul class="rate-includes">
+        <li>On-location audio and video recording, own equipment provided (up to a 2-hour session, single location)</li>
+        <li>Full episode edit — video + audio (up to 60 min raw)</li>
+        <li>One round of revisions · Delivered in HD (1080p) with mastered audio</li>
+      </ul>
+      <p class="rate-fine">Includes filming (day-rate value ~$750) and editing (Full Edit value $500) bundled at a $150 savings. Travel beyond a 25-mile radius billed separately; additional recording time billed at $150/hr.</p>
+
+      <div class="rate-sub">Presentation / Webinar Editing</div>
+      <div class="rate-row"><span>Flat rate, up to 15 minutes finished runtime</span><strong>$200</strong></div>
+      <div class="rate-row rate-row--add"><span>Each additional finished minute</span><strong>+$15</strong></div>
+      <ul class="rate-includes">
+        <li>Trimming, slide/screen-share sync, and speaker cutaways</li>
+        <li>Basic motion graphics for titles and section breaks</li>
+        <li>Audio cleanup and leveling · One round of revisions</li>
+      </ul>
+    </div>
+
+    <div class="rate-group">
+      <h4>Audio Editing</h4>
+      <div class="rate-sub">Podcast Audio Editing</div>
+      <div class="rate-row"><span>Per episode (up to 60 minutes raw audio)</span><strong>$250</strong></div>
+      <div class="rate-row rate-row--add"><span>Each additional 15 minutes of raw audio</span><strong>+$25</strong></div>
+      <ul class="rate-includes">
+        <li>Noise reduction and de-essing · Leveling, EQ, and mastering to platform loudness standards</li>
+        <li>Filler-word and dead-air removal · Intro/outro and music bed placement</li>
+        <li>One round of revisions</li>
+      </ul>
+
+      <div class="rate-sub">Aircheck Editing</div>
+      <div class="rate-row"><span>Hourly rate</span><strong>$75/hr</strong></div>
+      <p class="rate-fine">Cutting and compiling on-air segments for demos, submissions, or archival.</p>
+
+      <div class="rate-sub">Radio Imaging</div>
+      <div class="rate-row"><span>Production rate (station IDs, sweepers, promos)</span><strong>$2/sec</strong></div>
+      <p class="rate-fine">Example: a 30-second promo runs $60; a 60-second sweeper runs $120. 10% bundle discount on orders of 10+ spots.</p>
+    </div>
+
+    <div class="rate-group">
+      <h4>DJing</h4>
+      <div class="rate-row"><span>Hourly rate</span><strong>$100/hr</strong></div>
+      <p class="rate-fine">Includes standard sound system setup. Travel outside a 25-mile radius billed separately.</p>
+    </div>
+
+    <div class="rate-group">
+      <h4>Creative Direction / Consulting</h4>
+      <div class="rate-row"><span>Hourly consulting rate</span><strong>$125/hr</strong></div>
+      <div class="rate-row"><span>Full day rate (up to 8 hrs)</span><strong>$900</strong></div>
+      <p class="rate-fine">Covers creative strategy, brand direction, project oversight, and pre-production planning.</p>
+    </div>
+
+    <div class="rate-group">
+      <h4>Graphic Design</h4>
+      <div class="rate-row"><span>Flyer — single-sided</span><strong>$150</strong></div>
+      <div class="rate-row"><span>Flyer — double-sided</span><strong>$275</strong></div>
+      <div class="rate-row"><span>Social media graphic (single asset)</span><strong>$75</strong></div>
+      <div class="rate-row rate-row--add"><span>Additional revision (beyond first two rounds)</span><strong>+$25</strong></div>
+    </div>
+  </div>
+</div>
+
 <!-- ============ CONTACT ============ -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <p class="eyebrow reveal">05 — Contact</p>
+    <p class="eyebrow reveal">06 — Contact</p>
     <h2 class="contact-title reveal">Let's <span class="chrome-text">Connect</span>.</h2>
 
     <div class="contact-grid reveal">
       <form class="contact-form" id="contactForm">
+        <input type="hidden" name="access_key" value="eb92cedc-b0c0-43b5-aeb7-c81af4022382">
+        <input type="hidden" name="subject" value="New inquiry from octaviamarch.com">
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-row">
           <label>Name
             <input type="text" name="name" autocomplete="name" required>
@@ -281,10 +431,12 @@
           </label>
         </div>
         <label>Message
-          <textarea name="message" rows="5" required></textarea>
+          <textarea name="message" rows="5" required placeholder="Tell me about the project — service needed, timeline, and a link to any files you've dropped off."></textarea>
         </label>
-        <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="submit-btn">Send Message <span class="arrow">→</span></button>
+        <button type="submit" class="submit-btn">
+          <span class="submit-btn-label">Send Message</span> <span class="arrow">→</span>
+        </button>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>

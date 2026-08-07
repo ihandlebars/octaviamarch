@@ -35,22 +35,25 @@ revealEls.forEach(el => io.observe(el));
 // ============ FOOTER YEAR ============
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ============ BIO MODAL ============
-const bioModal = document.getElementById('bioModal');
-const readMoreBtn = document.getElementById('readMoreBtn');
-
-function openModal() {
-  bioModal.classList.add('open');
+// ============ MODALS (generic — supports any [data-modal-target] trigger) ============
+function openModal(modal) {
+  modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-function closeModal() {
-  bioModal.classList.remove('open');
+function closeModal(modal) {
+  modal.classList.remove('open');
   document.body.style.overflow = '';
 }
-if (readMoreBtn) readMoreBtn.addEventListener('click', openModal);
-bioModal.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeModal));
+document.querySelectorAll('[data-modal-target]').forEach((trigger) => {
+  const modal = document.getElementById(trigger.dataset.modalTarget);
+  if (modal) trigger.addEventListener('click', () => openModal(modal));
+});
+document.querySelectorAll('.modal').forEach((modal) => {
+  modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', () => closeModal(modal)));
+});
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && bioModal.classList.contains('open')) closeModal();
+  if (e.key !== 'Escape') return;
+  document.querySelectorAll('.modal.open').forEach((modal) => closeModal(modal));
 });
 
 // ============ REEL: sound toggle + fullscreen ============
@@ -99,31 +102,51 @@ document.addEventListener('fullscreenchange', () => {
 });
 
 // ============ CONTACT FORM ============
-// No backend is wired up yet, so this opens the visitor's email client with
-// the message prefilled, addressed to info@octaviamarch.com. To get true
-// silent form-to-inbox delivery (no email client required), hook this form
-// up to a service like Formspree / Web3Forms / Netlify Forms instead —
-// that just needs an account + endpoint from Octavia, then a one-line swap
-// of this handler for a fetch() POST to that endpoint.
+// Submits directly to Web3Forms, which emails the submission to Octavia.
+// No page reload, no visitor email client required — real delivery with a
+// real success/error message shown right here on the page.
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  const submitBtn = contactForm.querySelector('.submit-btn');
+  const submitLabel = contactForm.querySelector('.submit-btn-label');
+  const statusEl = document.getElementById('formStatus');
+
+  const setStatus = (text, kind) => {
+    if (!statusEl) return;
+    statusEl.textContent = text;
+    statusEl.className = 'form-status' + (kind ? ` form-status--${kind}` : '');
+  };
+
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(contactForm);
 
-    // honeypot — if a bot filled this hidden field, silently drop it
-    if (data.get('_gotcha')) return;
+    // honeypot — if a bot checked this hidden field, silently drop it
+    if (data.get('botcheck')) return;
 
-    const name = (data.get('name') || '').toString().trim();
-    const email = (data.get('email') || '').toString().trim();
-    const message = (data.get('message') || '').toString().trim();
+    submitBtn.disabled = true;
+    if (submitLabel) submitLabel.textContent = 'Sending…';
+    setStatus('', '');
 
-    const subject = encodeURIComponent(`New inquiry from ${name || 'your website'}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: data,
+      });
+      const result = await res.json();
 
-    window.location.href = `mailto:info@octaviamarch.com?subject=${subject}&body=${body}`;
-
-    const note = document.getElementById('formNote');
-    if (note) note.textContent = 'Opening your email app to send this to info@octaviamarch.com…';
+      if (result.success) {
+        contactForm.reset();
+        setStatus("Thanks — your message is on its way. I'll get back to you within 24 hours.", 'success');
+        if (submitLabel) submitLabel.textContent = 'Sent';
+      } else {
+        throw new Error(result.message || 'Submission failed');
+      }
+    } catch (err) {
+      setStatus('Something went wrong sending that — please email info@octaviamarch.com directly instead.', 'error');
+      if (submitLabel) submitLabel.textContent = 'Send Message';
+      submitBtn.disabled = false;
+    }
   });
 }
