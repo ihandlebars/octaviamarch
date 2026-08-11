@@ -287,8 +287,18 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes scrollDown { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
 /* ============ SPOTLIGHT (testimonials) ============ */
-.spotlight { padding: 64px 0 56px; background: var(--near-black); }
+.spotlight { position: relative; padding: 64px 0 56px; background: var(--near-black); overflow: hidden; }
+.spotlight-glow {
+  position: absolute;
+  top: -140px; left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 400px;
+  background: radial-gradient(ellipse, rgba(255,159,67,0.22), transparent 70%);
+  filter: blur(20px);
+  pointer-events: none;
+}
 .spotlight-heading {
+  position: relative;
   text-align: center;
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -296,10 +306,10 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.04em;
   font-size: clamp(20px, 2.4vw, 28px);
   color: var(--off-white);
-  opacity: 0.85;
   margin-bottom: 36px;
 }
 .spotlight-marquee {
+  position: relative;
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
   mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
@@ -320,32 +330,57 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--charcoal);
   border: 1px solid rgba(212,175,55,0.18);
   border-radius: 4px;
-  padding: 28px 26px 24px;
+  padding: 24px 26px 26px;
   display: flex;
   flex-direction: column;
+  transition: border-color .3s ease, transform .3s ease;
 }
-.spotlight-card .quote-mark {
-  font-family: var(--font-display);
-  font-size: 34px;
-  line-height: 1;
-  color: var(--gold);
-  opacity: 0.55;
-  margin-bottom: 6px;
+.spotlight-card:hover { border-color: rgba(255,159,67,0.5); transform: translateY(-3px); }
+.spotlight-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.spotlight-avatar {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+}
+.avatar-1 { background: #E8615D; }
+.avatar-2 { background: #2FBFA0; }
+.avatar-3 { background: #9B72E0; }
+.avatar-4 { background: #F2A93B; }
+.avatar-5 { background: #E8659F; }
+.avatar-6 { background: #4E96E8; }
+.avatar-7 { background: #52B788; }
+.spotlight-by {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: var(--off-white);
+  font-weight: 600;
+}
+.spotlight-by small {
+  font-size: 11px;
+  color: var(--gray);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
 }
 .spotlight-card p {
   color: var(--off-white);
   opacity: 0.92;
   font-size: 14.5px;
   line-height: 1.55;
-  margin-bottom: 16px;
   flex-grow: 1;
-}
-.spotlight-by {
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--gold-bright);
-  font-weight: 600;
-  opacity: 0.85;
 }
 
 /* ============ MARQUEE (social ticker) ============ */
