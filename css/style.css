@@ -652,6 +652,7 @@ section[id] { scroll-margin-top: 88px; }
 .rate-fine { font-size: 12.5px !important; color: var(--gray) !important; opacity: 1 !important; font-style: italic; margin: 10px 0 0 !important; }
 
 /* ============ WORK WITH ME ============ */
+.work { padding: 60px var(--edge); }
 .work-inner { max-width: var(--container); margin: 0 auto; }
 .work-title {
   font-family: var(--font-display);
@@ -825,7 +826,7 @@ section[id] { scroll-margin-top: 88px; }
 /* ============ MUSIC IV BREAKFAST ============ */
 .mib {
   background: radial-gradient(ellipse at 20% 30%, rgba(212,175,55,0.08), transparent 55%);
-  padding: 140px var(--edge);
+  padding: 140px var(--edge) 60px;
 }
 .mib-grid {
   max-width: 1360px;
@@ -884,6 +885,7 @@ section[id] { scroll-margin-top: 88px; }
 .mib-video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 
 /* ============ CONTACT ============ */
+.contact { padding-top: 56px; }
 .contact-inner { max-width: var(--container); margin: 0 auto; text-align: center; }
 .contact-title {
   font-family: var(--font-display);
