@@ -287,7 +287,7 @@ button { font-family: inherit; cursor: pointer; }
 @keyframes scrollDown { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
 
 /* ============ SPOTLIGHT (testimonials) ============ */
-.spotlight { position: relative; padding: 64px 0 56px; background: var(--near-black); overflow: hidden; }
+.spotlight { position: relative; padding: 32px 0; background: var(--near-black); overflow: hidden; }
 .spotlight-glow {
   position: absolute;
   top: -140px; left: 50%;
@@ -306,7 +306,7 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.04em;
   font-size: clamp(20px, 2.4vw, 28px);
   color: var(--off-white);
-  margin-bottom: 36px;
+  margin-bottom: 22px;
 }
 .spotlight-marquee {
   position: relative;
