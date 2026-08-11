@@ -841,7 +841,7 @@ section[id] { scroll-margin-top: 88px; }
   border-radius: 20px;
   overflow: hidden;
   margin: 6px 0 26px;
-  background: var(--off-white);
+  background: transparent;
   padding: 14px;
   box-sizing: border-box;
   box-shadow: 0 0 0 1px rgba(212,175,55,0.4), 0 20px 40px -20px rgba(0,0,0,0.7);
