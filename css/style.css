@@ -319,6 +319,7 @@ button { font-family: inherit; cursor: pointer; }
   align-items: stretch;
   width: max-content;
   animation: marquee 55s linear infinite;
+  will-change: transform;
 }
 @media (hover: hover) {
   .spotlight-track:hover { animation-play-state: paused; }
@@ -406,6 +407,10 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.05em;
   animation: marquee 30s linear infinite;
   width: max-content;
+  /* Forces GPU compositing — without it, iOS Safari can pause this animation
+     when it scrolls off-screen and fail to properly resume it on return,
+     leaving the marquee stuck. */
+  will-change: transform;
 }
 /* (hover: hover) excludes touch devices — without it, tapping the marquee on
    mobile can leave :hover "stuck" (iOS Safari quirk), freezing the animation
@@ -726,6 +731,7 @@ section[id] { scroll-margin-top: 88px; }
   align-items: center;
   width: max-content;
   animation: marquee 28s linear infinite;
+  will-change: transform;
 }
 @media (hover: hover) {
   .press-track:hover { animation-play-state: paused; }
