@@ -718,6 +718,81 @@ section[id] { scroll-margin-top: 88px; }
   color: var(--gray);
 }
 
+/* ============ VIRAL MOMENTS ============ */
+.viral { padding: 60px var(--edge) 100px; }
+.viral-inner { max-width: var(--container); margin: 0 auto; }
+.viral-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(36px, 5.6vw, 60px);
+  line-height: 1.05;
+  margin: 16px 0 44px;
+  color: var(--off-white);
+}
+.viral-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(212,175,55,0.2);
+  border: 1px solid rgba(212,175,55,0.2);
+}
+.viral-card {
+  background: var(--near-black);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background .3s ease;
+}
+.viral-card:hover { background: var(--charcoal); }
+.viral-platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.viral-platform .icon { width: 15px; height: 15px; flex-shrink: 0; }
+.viral-num {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.4vw, 60px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.viral-num small { font-size: 0.5em; }
+.viral-label {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 6px;
+}
+.viral-card p {
+  color: var(--off-white);
+  opacity: 0.75;
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 16px 0 20px;
+  flex-grow: 1;
+}
+.viral-watch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gold-bright);
+}
+.viral-watch .arrow { transition: transform .3s ease; }
+.viral-card:hover .viral-watch .arrow { transform: translate(3px,-3px); }
+
 /* ============ PRESS / CREDITS ============ */
 .press-marquee {
   overflow: hidden;
@@ -1035,6 +1110,7 @@ section[id] { scroll-margin-top: 88px; }
   .mib-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .work-grid { grid-template-columns: 1fr; }
+  .viral-grid { grid-template-columns: 1fr; }
   .modal-panel--wide { padding: 44px 36px; }
   .scroll-cue { display: none; }
 }
