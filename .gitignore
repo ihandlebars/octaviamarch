@@ -5,8 +5,9 @@
 .claude/
 
 # Contains subscriber/analytics/business data — not part of the site,
-# not meant for a public repo. Remove this line if you want it tracked.
+# not meant for a public repo. Remove these lines if you want them tracked.
 Earn on YouTube - YouTube Studio 080426.pdf
+YouTube numbers 082426.pdf
 
 # Source screenshots the testimonial quotes were pulled from — text is on
 # the site, images aren't. Some contain other people's usernames/a private
